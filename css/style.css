@@ -1,0 +1,127 @@
+header {
+    display: flex;
+    padding: 50px;
+    justify-content: center;
+    color: white;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8);
+}
+
+html, body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Image Style */
+#Background {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: background-image 1s ease-in-out;
+}
+/* Gradient overlay */
+#Background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 1)
+    );
+
+    pointer-events: none;
+}
+
+.Introduction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 100px;
+}
+.Card {
+    /* Padding outside the card */
+    width: 50%;
+
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+
+    /* Padding inside the card */
+    text-align: center;
+    padding-block: 50px;
+
+    border-radius: 20px;
+
+    /* Style of the card */
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: white;
+}
+
+/* Styles the Internal navigation bar */
+.Navigation ul {
+    list-style-type: none;
+    padding: 30px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+.Navigation ul li {
+    position: relative;
+    margin: 0;
+}
+/* Vertical Line between buttons */
+.Navigation ul li::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: white;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.Navigation ul li:first-child::before {
+    display: none;
+}
+/* Button Style */
+.Navigation ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 100px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.3s;
+    min-width: 150px; /* Set a minimum width for buttons */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.Navigation ul li a:hover {
+    background-color: black;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: white;
+}
