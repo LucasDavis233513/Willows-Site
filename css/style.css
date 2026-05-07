@@ -22,10 +22,30 @@ footer {
     bottom: 0;
 }
 
-H2 {
-    align-items: center;
+h2 {
     color: white;
+    text-align: center;
+
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8);
+
+    margin-top: 10px;
+    margin-bottom: 1px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+
+    cursor: pointer;
+}
+
+hr {
+    width: 10%;
+    margin: auto;
 }
 
 /* Image Style */
@@ -53,14 +73,21 @@ H2 {
     );
 
     pointer-events: none;
+
+    z-index: 1;
+}
+/* Ensure content is ABOVE gradient */
+#Background > * {
+    position: relative;
+    z-index: 2;
 }
 
-.Introduction {
+.Content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 .Card {
     /* Padding outside the card */
@@ -71,6 +98,7 @@ H2 {
     /* Padding inside the card */
     text-align: center;
     padding-block: 50px;
+    padding-inline: 30px;
 
     border-radius: 20px;
 
@@ -130,4 +158,54 @@ H2 {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     color: white;
+}
+
+.ContactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Name {
+    display: flex;
+    gap: 20px;
+}
+
+.Name .Input {
+    flex: 1;
+}
+
+.Input {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.Input label {
+    margin-bottom: 8px;
+    color: white;
+}
+
+.Input input,
+.Input textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.Input textarea {
+    resize: vertical;
+}
+
+.ContactMsg {
+    color: white;
+    text-align: center;
+
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8);
 }
