@@ -8,11 +8,11 @@
     </head>
     <body>
         <div class = "Contact">
-            <div id = "Background">
+            <div id = "Background" style="background-image: url('../Images/Gradient.png');">
                 <header>
                     <h1>Willow's Electrolysis Business</h1>
 
-                    <nav class = "Navigation">
+                    <nav>
                         <ul>
                             <li><a href = "../index.html">Home</a></li>
                             <li><a href = "About.html">About</a></li>
@@ -22,15 +22,17 @@
                     </nav>
                 </header>
 
-                <h2>Contact</h2>
-                <hr>
-                <div class = "ContactMsg">
-                    <p>
-                        Please feel free to contact me with any questions you may have, or to schedule a consultation.
-                    </p>
-                </div>
-
                 <div class = "Content">
+                    <div>
+                        <h2>Contact</h2>
+                        <hr>
+                        <div class = "ContactMsg">
+                            <p>
+                                Please feel free to contact me with any questions you may have, or to schedule a consultation.
+                            </p>
+                        </div>
+                    </div>
+
                     <form action = "/submit-endpoint" method = "POST" class = "Card ContactForm">
                         <div class = "Name">
                             <div class = "Input">
@@ -44,7 +46,7 @@
                         </div>
                         <div class = "Input">
                             <label for = "number">Phone Number:</label>
-                            <input type = "tel" id = "number" name = "number" pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder = "775-453-6781" required>
+                            <input type = "tel" id = "number" name = "number" pattern="^([0-9]{3}-[0-9]{3}-[0-9]{4}|\([0-9]{3}\)[0-9]{3}-[0-9]{4})$" placeholder="775-453-6781 or (775)453-6781" required>
                         </div>
                         <div class = "Input">
                             <label for = "msg">Message:</label>
@@ -53,6 +55,7 @@
                         <button type="submit">Submit</button>
                     </form>
                 </div>
+
             </div>
         </div>
 

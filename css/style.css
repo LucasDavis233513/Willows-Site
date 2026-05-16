@@ -48,6 +48,57 @@ hr {
     margin: auto;
 }
 
+/* Styles the Internal navigation bar */
+nav ul {
+    list-style-type: none;
+    padding: 30px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    position: relative;
+    margin: 0;
+}
+/* Vertical Line between buttons */
+nav ul li::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: white;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+nav ul li:first-child::before {
+    display: none;
+}
+/* Button Style */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 100px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.3s;
+    min-width: 150px; /* Set a minimum width for buttons */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+nav ul li a:hover {
+    background-color: black;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: white;
+}
+
 /* Image Style */
 #Background {
     width: 100%;
@@ -88,6 +139,7 @@ hr {
     align-items: center;
     flex-wrap: wrap;
     padding-top: 50px;
+    gap: 110px;
 }
 .Card {
     /* Padding outside the card */
@@ -103,57 +155,6 @@ hr {
     border-radius: 20px;
 
     /* Style of the card */
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    color: white;
-}
-
-/* Styles the Internal navigation bar */
-.Navigation ul {
-    list-style-type: none;
-    padding: 30px;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-.Navigation ul li {
-    position: relative;
-    margin: 0;
-}
-/* Vertical Line between buttons */
-.Navigation ul li::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 1px;
-    background-color: white;
-    left: 0;
-    top: 0;
-    z-index: 1;
-}
-.Navigation ul li:first-child::before {
-    display: none;
-}
-/* Button Style */
-.Navigation ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    padding: 10px 100px;
-    border: none;
-    border-radius: 5px;
-    background-color: transparent;
-    position: relative;
-    z-index: 2;
-    transition: background-color 0.3s;
-    min-width: 150px; /* Set a minimum width for buttons */
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.Navigation ul li a:hover {
-    background-color: black;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
