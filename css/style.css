@@ -1,8 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 header {
     display: flex;
-    padding: 50px;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     color: white;
+    padding: 50px;
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8);
 }
 
@@ -25,8 +30,6 @@ footer {
 h2 {
     color: white;
     text-align: center;
-
-    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8);
 
     margin-top: 10px;
     margin-bottom: 1px;
@@ -127,10 +130,21 @@ nav ul li a:hover {
 
     z-index: 1;
 }
-/* Ensure content is ABOVE gradient */
-#Background > * {
+
+.Hamburger {
+    display: none;
     position: relative;
-    z-index: 2;
+    z-index: 10000;
+}
+
+.Bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
 }
 
 .Content {
@@ -159,9 +173,11 @@ nav ul li a:hover {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     color: white;
+
+    z-index: 3;
 }
 
-.ContactForm {
+#ContactForm {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -204,9 +220,63 @@ nav ul li a:hover {
     resize: vertical;
 }
 
-.ContactMsg {
-    color: white;
-    text-align: center;
+@media only screen and (max-width: 1250px) {
+    .NavLinks {
+        position: fixed;
+        inset: 0; /* full screen */
 
-    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+
+        width: 100%;
+        height: 100vh;
+
+        left: -100%;
+        transition: 0.3s ease-in-out;
+
+        z-index: 9999;
+    }
+
+    .NavLinks.active {
+        left: 0;
+    }
+
+    .NavLinks li {
+        margin: 2rem 0;
+    }
+
+    .NavLinks li a {
+        font-size: 24px;
+        color: white;
+    }
+
+    .Hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .Hamburger.active .Bar:nth-child(2) {
+        opacity: 0;
+    }
+    .Hamburger.active .Bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .Hamburger.active .Bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    nav ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* disable the Vertical lines */
+    nav ul li::before {
+        display: none;
+    }
 }

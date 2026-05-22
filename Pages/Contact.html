@@ -5,6 +5,7 @@
         <title>Contact</title>
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <link rel = "stylesheet" href = "../css/style.css">
+        <script type = "text/javascript" src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     </head>
     <body>
         <div class = "Contact">
@@ -13,43 +14,48 @@
                     <h1>Willow's Electrolysis Business</h1>
 
                     <nav>
-                        <ul>
+                        <ul class = "NavLinks">
                             <li><a href = "../index.html">Home</a></li>
                             <li><a href = "About.html">About</a></li>
                             <li><a href = "Contact.html">Contact</a></li>
                             <li><a href = "FAQ.html">FAQ</a></li>
                         </ul>
+                        <div class = "Hamburger">
+                            <span class = "Bar"></span>
+                            <span class = "Bar"></span>
+                            <span class = "Bar"></span>
+                        </div>
                     </nav>
                 </header>
 
                 <div class = "Content">
-                    <div>
+                    <form action = "/submit-endpoint" method = "POST" id = "ContactForm" class = "Card">
                         <h2>Contact</h2>
-                        <hr>
-                        <div class = "ContactMsg">
-                            <p>
-                                Please feel free to contact me with any questions you may have, or to schedule a consultation.
-                            </p>
-                        </div>
-                    </div>
+                        <p>
+                            Please feel free to contact me with any questions you may have, or to schedule a consultation. <br>
+                            <b>* Please be sure to state what your preferred form of contact is. *</b>
+                        </p>
 
-                    <form action = "/submit-endpoint" method = "POST" class = "Card ContactForm">
                         <div class = "Name">
                             <div class = "Input">
-                                <label for = "fstName">First Name:</label>
+                                <label for = "fstName"><span style="color: red;">*</span> First Name:</label>
                                 <input type = "text" id = "fstName" name = "fstName" required>
                             </div>
                             <div class = "Input">
-                                <label for = "lstName">Last Name:</label>
+                                <label for = "lstName"><span style="color: red;">*</span> Last Name:</label>
                                 <input type = "text" id = "lstName" name = "lstName" required>
                             </div>
                         </div>
                         <div class = "Input">
-                            <label for = "number">Phone Number:</label>
+                            <label for = "email">Email:</label>
+                            <input type = "email" id = "email" name = "email">
+                        </div>
+                        <div class = "Input">
+                            <label for = "number"><span style="color: red;">*</span> Phone Number:</label>
                             <input type = "tel" id = "number" name = "number" pattern="^([0-9]{3}-[0-9]{3}-[0-9]{4}|\([0-9]{3}\)[0-9]{3}-[0-9]{4})$" placeholder="775-453-6781 or (775)453-6781" required>
                         </div>
                         <div class = "Input">
-                            <label for = "msg">Message:</label>
+                            <label for = "msg"><span style="color: red;">*</span> Message:</label>
                             <textarea id = "msg" name = "msg"  rows="10" cols="45" required></textarea>
                         </div>
                         <button type="submit">Submit</button>
@@ -70,4 +76,6 @@
             </div>
         </footer>
     </body>
+    <script src = "../Scripts/Hamburger.js"></script>
+    <script src = "../Scripts/Form.js"></script>
 </html>
