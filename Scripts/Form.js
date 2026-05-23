@@ -24,14 +24,13 @@ function validateEmail(email) {
     }
 }
 
-function checkContactMethod() {
-    const checked = document.querySelectorAll('input[name="contactMethod"]:checked');
-
+function checkContactMethod(checked) {
     if (checked.length === 0) {
         document.getElementById("error").style.display = "block";
         throw new Error("Please provide at least one Contact Method")
     } else {
         document.getElementById("error").style.display = "none";
+        console.log(checked)
     }
 }
 
@@ -41,8 +40,9 @@ document.getElementById('ContactForm').addEventListener('submit', function (even
     // Get form values
     const firstName = document.getElementById('fstName').value.trim();
     const lastName = document.getElementById('lstName').value.trim();
-    const email = document.getElementById('email').value.trim();
+    const email = document.getElementById('emailAdr').value.trim();
     const phoneNumber = document.getElementById('number').value.trim();
+    const checked = document.querySelectorAll('input[name="contactMethod"]:checked');
     const message = document.getElementById('msg').value.trim();
 
     const name = firstName + " " + lastName;
@@ -50,15 +50,22 @@ document.getElementById('ContactForm').addEventListener('submit', function (even
     try {
         validatePhone(phoneNumber);
         validateEmail(email);
-        checkContactMethod();
+        checkContactMethod(checked);
+
+        const contactMethod =
+            "My preferred Contact Method(s) are: " +
+            Array.from(checked)
+                .map(el => el.id)
+                .join(', ');
 
         const templateParams = {
             name: name,
             email: email,
             number: phoneNumber,
+            contactMethod: contactMethod,
             message: message
         };
-/*
+
         emailjs.send(
             "service_24peva7",
             "contact_form",
@@ -68,7 +75,6 @@ document.getElementById('ContactForm').addEventListener('submit', function (even
             console.log("SUCCESS", response.status, response.text);
         })
 
- */
         console.log("Form Submission Finished");
     } catch (error) {
         alert(error);
