@@ -1,4 +1,40 @@
 emailjs.init('J6vsPMsWw9ZkNQX10');
+
+function validatePhone(number) {
+    const re = /^(\d{3}-\d{3}-\d{4}|\(\d{3}\)\d{3}-\d{4})$/;
+
+    if (re.test(String(number).toLowerCase()) === false) {
+        document.getElementById("errorNbr").style.display = "block";
+        throw new Error("Please input a valid Phone Number");
+    } else {
+        document.getElementById("errorNbr").style.display = "none";
+    }
+}
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email.length === 0) return 1;
+
+    if (re.test(String(email).toLowerCase()) === false) {
+        document.getElementById("errorEm").style.display = "block";
+        throw new Error("Please input a valid Email Address");
+    } else {
+        document.getElementById("errorEm").style.display = "none";
+    }
+}
+
+function checkContactMethod() {
+    const checked = document.querySelectorAll('input[name="contactMethod"]:checked');
+
+    if (checked.length === 0) {
+        document.getElementById("error").style.display = "block";
+        throw new Error("Please provide at least one Contact Method")
+    } else {
+        document.getElementById("error").style.display = "none";
+    }
+}
+
 document.getElementById('ContactForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -11,24 +47,31 @@ document.getElementById('ContactForm').addEventListener('submit', function (even
 
     const name = firstName + " " + lastName;
 
-    const templateParams = {
-        name: name,
-        email: email,
-        number: phoneNumber,
-        message: message
-    };
+    try {
+        validatePhone(phoneNumber);
+        validateEmail(email);
+        checkContactMethod();
 
-    emailjs.send(
-        "service_24peva7",
-        "contact_form",
-        templateParams
-    )
-        .then(function (response) {
-            alert("Message sent successfully!");
+        const templateParams = {
+            name: name,
+            email: email,
+            number: phoneNumber,
+            message: message
+        };
+/*
+        emailjs.send(
+            "service_24peva7",
+            "contact_form",
+            templateParams
+        ).then(function (response) {
+            alert("Thank you! I will get in contact with you as soon as possible!");
             console.log("SUCCESS", response.status, response.text);
         })
-        .catch(function (error) {
-            alert("Failed to send message.");
-            console.log("FAILED", error);
-        });
+
+ */
+        console.log("Form Submission Finished");
+    } catch (error) {
+        alert(error);
+        console.log(error);
+    }
 });

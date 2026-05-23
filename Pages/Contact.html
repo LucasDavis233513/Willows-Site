@@ -9,25 +9,26 @@
     </head>
     <body>
         <div class = "Contact">
+            <header>
+                <h1>Freedom in Smooth <br> Electrolysis</h1>
+
+                <nav>
+                    <ul class = "NavLinks">
+                        <li><a href = "../index.html">Home</a></li>
+                        <li><a href = "About.html">About Me</a></li>
+                        <li><a href = "Contact.html">Contact</a></li>
+                        <li><a href = "Prices.html">Prices</a></li>
+                        <li><a href = "Policies.html">Policies</a></li>
+                        <li><a href = "FAQ.html">FAQ</a></li>
+                    </ul>
+                    <div class = "Hamburger">
+                        <span class = "Bar"></span>
+                        <span class = "Bar"></span>
+                        <span class = "Bar"></span>
+                    </div>
+                </nav>
+            </header>
             <div id = "Background" style="background-image: url('../Images/Gradient.png');">
-                <header>
-                    <h1>Willow's Electrolysis Business</h1>
-
-                    <nav>
-                        <ul class = "NavLinks">
-                            <li><a href = "../index.html">Home</a></li>
-                            <li><a href = "About.html">About Me</a></li>
-                            <li><a href = "Contact.html">Contact</a></li>
-                            <li><a href = "FAQ.html">FAQ</a></li>
-                        </ul>
-                        <div class = "Hamburger">
-                            <span class = "Bar"></span>
-                            <span class = "Bar"></span>
-                            <span class = "Bar"></span>
-                        </div>
-                    </nav>
-                </header>
-
                 <div class = "Content">
                     <form action = "/submit-endpoint" method = "POST" id = "ContactForm" class = "Card">
                         <h2>Contact</h2>
@@ -38,30 +39,55 @@
 
                         <div class = "Name">
                             <div class = "Input">
-                                <label for = "fstName"><span style="color: red;">*</span> First Name:</label>
+                                <label for = "fstName"><span style = "color: red;">*</span> First Name:</label>
                                 <input type = "text" id = "fstName" name = "fstName" required>
                             </div>
                             <div class = "Input">
-                                <label for = "lstName"><span style="color: red;">*</span> Last Name:</label>
+                                <label for = "lstName"><span style = "color: red;">*</span> Last Name:</label>
                                 <input type = "text" id = "lstName" name = "lstName" required>
                             </div>
                         </div>
                         <div class = "Input">
                             <label for = "email">Email:</label>
-                            <input type = "email" id = "email" name = "email">
+                            <input type = "email" id = "email" name = "email" placeholder = "youremail@gmail.com">
+                            <p id = "errorEm" style = "color: red; display: none;">
+                                Please input a valid Email Address.
+                            </p>
                         </div>
                         <div class = "Input">
-                            <label for = "number"><span style="color: red;">*</span> Phone Number:</label>
-                            <input type = "tel" id = "number" name = "number" pattern="^([0-9]{3}-[0-9]{3}-[0-9]{4}|\([0-9]{3}\)[0-9]{3}-[0-9]{4})$" placeholder="775-453-6781 or (775)453-6781" required>
+                            <label for = "number"><span style = "color: red;">*</span> Phone Number:</label>
+                            <input type = "tel" id = "number" name = "number" placeholder = "775-453-6781 or (775)453-6781" required>
+                            <p id = "errorNbr" style = "color: red; display: none;">
+                                Please input a valid Phone Number.
+                            </p>
                         </div>
+                        <fieldset>
+                            <legend><span style = "color: red;">*</span> Please specify at least one preferred Contact Method</legend>
+
+                            <div>
+                                <input type = "checkbox" id = "call" name = "contactMethod"  />
+                                <label for = "call">Call</label>
+                            </div>
+
+                            <div>
+                                <input type = "checkbox" id = "text" name = "contactMethod" />
+                                <label for = "text">Text</label>
+                            </div>
+                            <div>
+                                <input type = "checkbox" id = "emailMsg" name = "contactMethod" />
+                                <label for = "emailMsg">Email</label>
+                            </div>
+                            <p id = "error" style = "color: red; display: none;">
+                                Please select at least one contact method.
+                            </p>
+                        </fieldset>
                         <div class = "Input">
-                            <label for = "msg"><span style="color: red;">*</span> Message:</label>
-                            <textarea id = "msg" name = "msg"  rows="10" cols="45" required></textarea>
+                            <label for = "msg"><span style = "color: red;">*</span> Message:</label>
+                            <textarea id = "msg" name = "msg"  rows = "10" cols = "45" required></textarea>
                         </div>
                         <button type="submit">Submit</button>
                     </form>
                 </div>
-
             </div>
         </div>
 
@@ -69,10 +95,10 @@
             <div class = "Contact">
                 <p>Willow Davis</p>
                 <p>(775)842-9154</p>
-                <p>email@address.com</p>
+                <p>themuffinman9641@gmail.com</p>
             </div>
             <div class = "location">
-                <p>1001 Pyramid Way #100, Sparks, NV 89431</p>
+                <p>1001 Pyramid Way #204, Sparks, NV 89431</p>
             </div>
         </footer>
     </body>
