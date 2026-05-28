@@ -11,6 +11,7 @@ header {
 }
 
 html, body {
+    font-family:'Cormorant Garamond', serif;
     background-color: black;
     margin: 0;
     padding: 0;
@@ -26,16 +27,35 @@ footer {
     bottom: 0;
 }
 
-h1 {
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+fieldset div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+h1, h2 {
+    font-family: fantasy;
     text-align: center;
 }
 
 h2 {
     color: white;
-    text-align: center;
 
     margin-top: 10px;
     margin-bottom: 1px;
+}
+
+hr {
+    width: 10%;
+    margin: auto;
 }
 
 button {
@@ -144,12 +164,17 @@ nav ul li a:hover {
     z-index: 1;
 }
 
+#ContactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .Hamburger {
     display: none;
     position: relative;
     z-index: 10000;
 }
-
 .Bar {
     display: block;
     width: 25px;
@@ -191,32 +216,22 @@ nav ul li a:hover {
     z-index: 3;
 }
 
-#ContactForm {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
 .Name {
     display: flex;
     gap: 20px;
 }
-
 .Name .Input {
     flex: 1;
 }
-
 .Input {
     display: flex;
     flex-direction: column;
     text-align: left;
 }
-
 .Input label {
     margin-bottom: 8px;
     color: white;
 }
-
 .Input input,
 .Input textarea {
     padding: 12px;
@@ -229,10 +244,70 @@ nav ul li a:hover {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
-
 .Input textarea {
     resize: vertical;
 }
+
+.Prices {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    margin-bottom: 70px;
+}
+.Price {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 24px;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,.03);
+}
+.Time {
+    font-weight: 500;
+}
+.Cost {
+    color: #d8b36a;
+
+    font-weight: 600;
+}
+
+.FAQItem {
+    padding: 30px 0;
+
+    border-bottom:
+            1px solid rgba(255,255,255,.08);
+}
+.FAQItem:last-child{
+    border-bottom:none;
+}
+.FAQItem h3{
+    font-family: 'Playfair Display', serif;
+
+    font-size: 1.5rem;
+
+    margin-bottom: 18px;
+
+    color: #ffffff;
+}
+.FAQItem p {
+    line-height: 1.9;
+
+    color: #d7d7d7;
+
+    font-size: 1.05rem;
+}
+
+.LeftText {
+    text-align: left;
+}
+
 
 /* Collapse the internal navigation into a hamburger menu on mobile devices */
 @media only screen and (max-width: 1500px) {
