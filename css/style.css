@@ -164,6 +164,123 @@ nav ul li a:hover {
     z-index: 1;
 }
 
+#AboutBack {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: background-image 1s ease-in-out;
+}
+/* Gradient overlay */
+#AboutBack::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0) 50%,
+            rgba(0, 0, 0, 1) 100%
+    );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+#ContactBack {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: background-image 1s ease-in-out;
+}
+/* Gradient overlay */
+#ContactBack::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0) 50%,
+            rgba(0, 0, 0, 1) 100%
+    );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+#FAQBack {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: background-image 1s ease-in-out;
+}
+/* Gradient overlay */
+#FAQBack::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0) 50%,
+            rgba(0, 0, 0, 1) 100%
+    );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+#PricesBack {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: background-image 1s ease-in-out;
+}
+/* Gradient overlay */
+#PricesBack::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0) 50%,
+            rgba(0, 0, 0, 1) 100%
+    );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
 #ContactForm {
     display: flex;
     flex-direction: column;
