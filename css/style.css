@@ -357,6 +357,13 @@ nav ul li a:hover {
     gap: 110px;
 }
 
+.Home {
+    position: relative;
+    z-index: 2;
+
+    flex-direction: column;
+}
+
 .Card {
     /* Padding outside the card */
     width: 50%;
@@ -518,6 +525,40 @@ nav ul li a:hover {
     text-align: left;
 }
 
+.Buttons {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Buttons a {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+
+    border-radius: 50px;
+
+    transition: all 0.3s ease;
+
+
+}
+
+.Buttons a:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+.Buttons a:active {
+    transform: translateY(0);
+}
 
 /* Collapse the internal navigation into a hamburger menu on mobile devices */
 @media only screen and (max-width: 1500px) {
