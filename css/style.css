@@ -65,7 +65,7 @@ footer {
     width: 100%;
     bottom: 0;
 
-    z-index: 2;
+    z-index: 1;
 }
 
 fieldset {
@@ -201,8 +201,6 @@ nav ul li a:hover {
     );
 
     pointer-events: none;
-
-    z-index: 1;
 }
 
 #AboutBack {
@@ -213,8 +211,6 @@ nav ul li a:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    transition: background-image 1s ease-in-out;
 }
 /* Gradient overlay */
 #AboutBack::after {
@@ -230,8 +226,6 @@ nav ul li a:hover {
     );
 
     pointer-events: none;
-
-    z-index: 1;
 }
 
 #ContactBack {
@@ -242,8 +236,6 @@ nav ul li a:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    transition: background-image 1s ease-in-out;
 }
 /* Gradient overlay */
 #ContactBack::after {
@@ -260,8 +252,6 @@ nav ul li a:hover {
     );
 
     pointer-events: none;
-
-    z-index: 1;
 }
 
 #FAQBack {
@@ -272,8 +262,6 @@ nav ul li a:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    transition: background-image 1s ease-in-out;
 }
 /* Gradient overlay */
 #FAQBack::after {
@@ -292,8 +280,6 @@ nav ul li a:hover {
     );
 
     pointer-events: none;
-
-    z-index: 1;
 }
 
 #PricesBack {
@@ -304,8 +290,6 @@ nav ul li a:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    transition: background-image 1s ease-in-out;
 }
 /* Gradient overlay */
 #PricesBack::after {
@@ -321,8 +305,6 @@ nav ul li a:hover {
     );
 
     pointer-events: none;
-
-    z-index: 1;
 }
 
 
@@ -383,7 +365,7 @@ nav ul li a:hover {
     -webkit-backdrop-filter: blur(5px);
     color: white;
 
-    z-index: 3;
+    z-index: 1;
 }
 
 .AboutContent {
@@ -408,7 +390,26 @@ nav ul li a:hover {
 }
 
 .AboutCard {
-    background-image: url("../Images/TransFlag.jpg");
+    overflow: hidden;
+
+    background: linear-gradient(
+            to bottom,
+            #6bc7ec 0%,
+            #6bc7ec 20%,
+
+            #e8a6b6 20%,
+            #e8a6b6 41%,
+
+            #ffffff 41%,
+            #ffffff 62%,
+
+            #e8a6b6 62%,
+            #e8a6b6 83%,
+
+            #6bc7ec 83%,
+            #6bc7ec 100%
+    );
+
     width: 650px;
     min-height: 500px;
 
@@ -637,20 +638,40 @@ nav ul li a:hover {
     }
 
     .AboutCard {
-        width: 90%;
+        width: 80%;
         margin-left: 0;
         margin-bottom: 30px;
         padding: 40px;
     }
 
     .AboutContent img {
-        width: 90%;
+        width: 80%;
         height: auto;
+    }
+
+    .Content {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        gap: 30px;
+    }
+
+    .Card {
+        width: 100%;
+        border-radius: 0;
+        padding-inline: 20px;
     }
 }
 
 /* Adjust the form layout at low resolutions */
 @media only screen and (max-width: 850px) {
+    .AboutCard {
+        width: 100%;
+    }
+
+    .AboutContent img {
+        width: 100%;
+    }
+
     .Name {
         display: block;
     }
